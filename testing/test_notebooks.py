@@ -8,11 +8,13 @@ import unittest
 import sys
 import time
 import os
+
 from nose.plugins.attrib import attr
+from testing.gpflow_testcase import GPflowTestCase
 
 
 @attr(speed='slow')
-class TestNotebooks(unittest.TestCase):
+class TestNotebooks(GPflowTestCase):
     def _execNotebook(self, ep, notebook_filename, nbpath):
         with open(notebook_filename) as f:
             nb = nbformat.read(f, as_version=nbformat.current_nbformat)
